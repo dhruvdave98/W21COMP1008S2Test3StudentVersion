@@ -43,7 +43,6 @@ public class SportStore {
 
             profit += profit;
         }
-
         return profit;
     }
 }

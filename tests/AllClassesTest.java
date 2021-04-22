@@ -415,30 +415,30 @@ class AllClassesTest {
                 new SportStore("  1    ", inventory));
     }
 
-//    @Test
-//    void sellItem() {
-//        store.sellItem(tennisRacquet1, 7);
-//        assertEquals(13, tennisRacquet1.getQuantityInStock());
-//    }
-//
-//    @Test
-//    void calculateProfit1()
-//    {
-//        store.sellItem(tennisRacquet1, 7);
-//        //calculation for TR   = 7 * (89.99-21.87) = 476.84
-//        assertEquals(476.84, store.calculateProfit(), 0.001);
-//    }
-//
-//
-//    @Test
-//    void calculateProfit2()
-//    {
-//        store.sellItem(tennisRacquet1, 7);
-//        store.sellItem(skis1, 2);
-//        //calculation for TR   = 7 * (89.99-21.87) = 476.84
-//        //calculation for skis = 2 * (899.76-310) = 1179.52
-//        //total = 1656.36
-//        assertEquals(1656.36, store.calculateProfit(), 0.001);
-//    }
+    @Test
+    void sellItem() {
+        store.sellItem(tennisRacquet1, 7);
+        assertEquals(13, tennisRacquet1.getQuantityInStock());
+    }
+
+    @Test
+    void calculateProfit1()
+    {
+        store.sellItem(tennisRacquet1, 7);
+        //calculation for TR   = 7 * (89.99-21.87) = 476.84
+        assertEquals(476.84, store.calculateProfit(), 0.001);
+    }
+
+
+    @Test
+    void calculateProfit2()
+    {
+        store.sellItem(tennisRacquet1, 7);
+        store.sellItem(skis1, 2);
+        //calculation for TR   = 7 * (89.99-21.87) = 476.84
+        //calculation for skis = 2 * (899.76-310) = 1179.52
+        //total = 1656.36
+        assertEquals(1656.36, store.calculateProfit(), 0.001);
+    }
 
 }
