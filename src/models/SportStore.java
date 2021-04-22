@@ -20,6 +20,11 @@ public class SportStore {
     }
 
     public void setAddress(String address) {
+        address = (address.trim());
+        if(address.length() > 5)
+            this.address = address;
+        else
+            throw new IllegalArgumentException("Address should be more than 5 characters");
     }
 
     public ArrayList<InventoryItem> getInventory() {
