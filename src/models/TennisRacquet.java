@@ -9,6 +9,7 @@ import Utilities.DBUtility;
 import java.util.List;
 
 import static Utilities.DBUtility.getTennisRacquetHeadSizes;
+import static Utilities.DBUtility.tennisEquipmentBrands;
 
 public class TennisRacquet extends InventoryItem {
     private double weight;  //240-310
@@ -61,6 +62,11 @@ public class TennisRacquet extends InventoryItem {
     }
 
     public void setBrand(String brand) {
+        List<String> brands = tennisEquipmentBrands();
+        if(brands.contains(brand))
+            this.brand = brand;
+        else
+            throw new IllegalArgumentException("Brands should be in the list");
     }
 
     public String getModel() {
