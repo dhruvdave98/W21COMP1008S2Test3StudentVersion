@@ -8,8 +8,7 @@ import Utilities.DBUtility;
 
 import java.util.List;
 
-import static Utilities.DBUtility.getTennisRacquetHeadSizes;
-import static Utilities.DBUtility.tennisEquipmentBrands;
+import static Utilities.DBUtility.*;
 
 public class TennisRacquet extends InventoryItem {
     private double weight;  //240-310
@@ -17,12 +16,6 @@ public class TennisRacquet extends InventoryItem {
     private String brand; //Head, Babolat, Dunlop, Yonex
     private String model;
 
-//    public TennisRacquet(String brand, String model, double weight, String headSize, double purchasePrice, double sellingPrice, int quantityInStock) {
-//        setWeight(weight);
-//        setHeadSize(headSize);
-//        setBrand(brand);
-//        setModel(model);
-//    }
 
 
     public TennisRacquet(String brand, String model, double weight , String headSize, double purchasePrice, double sellingPrice, int quantityInStock) {
@@ -74,5 +67,10 @@ public class TennisRacquet extends InventoryItem {
     }
 
     public void setModel(String model) {
+        List<String> models = tennisRacquetModelsByBrand("Head");
+        if(models.contains(model))
+            this.model = model;
+        else
+            throw new IllegalArgumentException("Models should be in the list");
     }
 }
