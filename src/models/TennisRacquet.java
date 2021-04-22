@@ -67,10 +67,10 @@ public class TennisRacquet extends InventoryItem {
     }
 
     public void setModel(String model) {
-        List<String> models = tennisRacquetModelsByBrand("Head");
-        if(models.contains(model))
-            this.model = model;
-        else
-            throw new IllegalArgumentException("Models should be in the list");
+//        List<String> models = tennisRacquetModelsByBrand("Head");
+//        if(models.contains(model))
+//            this.model = model;
+//        else
+//            throw new IllegalArgumentException("Models should be in the list");
     }
 }

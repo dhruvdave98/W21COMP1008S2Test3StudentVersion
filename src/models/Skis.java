@@ -6,11 +6,19 @@ package models;
 
 import Utilities.DBUtility;
 
-public class Skis {
+public class Skis extends InventoryItem{
     private String brand, model;
     private int length;
 
-    public Skis(String brand, String model, int length,double purchasePrice, double sellingPrice, int quantityInStock) {
+//    public Skis(String brand, String model, int length,double purchasePrice, double sellingPrice, int quantityInStock) {
+//    }
+
+
+    public Skis(String brand, String model, int length , double purchasePrice, double sellingPrice , int quantityInStock) {
+        super(purchasePrice, sellingPrice, quantityInStock);
+        this.brand = brand;
+        this.model = model;
+        this.length = length;
     }
 
     public String getBrand() {
@@ -32,5 +40,9 @@ public class Skis {
     }
 
     public void setLength(int length) {
+        if(length>=60 && length<=220)
+            this.length = length;
+        else
+            throw new IllegalArgumentException("length must be in the range of 60 to 220");
     }
 }
