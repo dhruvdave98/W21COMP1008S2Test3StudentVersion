@@ -138,7 +138,7 @@ class AllClassesTest {
     @Test
     void setIIgetProfit() {
         tennisRacquet1.setQuantitySold(5);
-        //quantity sold * (sellingPrice - purchasePrice) = 5*(89.99-21.87)=340.60
+        //quantity sold * (sellingPrice - purchasePrice) = 5*(89.99-21.87)=340.60;
         assertEquals(340.60, tennisRacquet1.getProfit(), 0.001);
     }
 
