@@ -32,6 +32,12 @@ public abstract class InventoryItem {
     }
 
     public void setQuantitySold(int quantitySold) {
+        if(quantityInStock >= quantitySold) {
+            quantityInStock = quantityInStock - quantitySold;
+            quantitySold = quantitySold + quantitySold;
+        }
+        else
+            throw new IllegalArgumentException("out of stock");
 
     }
 
