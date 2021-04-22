@@ -6,11 +6,14 @@ package models;
 
 public abstract class InventoryItem {
 
-    private int quantityInStock, quantitySold;
+    private int quantityInStock, quantitySold = 0;
     private double purchasePrice, sellingPrice;
 
     public InventoryItem(double purchasePrice, double sellingPrice, int quantityInStock)
     {
+        setPurchasePrice(purchasePrice);
+        setSellingPrice(sellingPrice);
+        setQuantityInStock(quantityInStock);
     }
 
     public int getQuantityInStock() {
@@ -18,6 +21,10 @@ public abstract class InventoryItem {
     }
 
     public void setQuantityInStock(int quantityInStock) {
+        if(quantityInStock >= 0)
+            this.quantityInStock = quantityInStock;
+        else
+            throw new IllegalArgumentException("quantity in stock should be more than 0");
     }
 
     public int getQuantitySold() {
@@ -25,6 +32,7 @@ public abstract class InventoryItem {
     }
 
     public void setQuantitySold(int quantitySold) {
+
     }
 
     public double getPurchasePrice() {
