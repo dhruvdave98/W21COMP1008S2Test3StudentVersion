@@ -8,8 +8,7 @@ import Utilities.DBUtility;
 
 import java.util.List;
 
-import static Utilities.DBUtility.getSkiBrands;
-import static Utilities.DBUtility.tennisEquipmentBrands;
+import static Utilities.DBUtility.*;
 
 public class Skis extends InventoryItem{
     private String brand, model;
@@ -43,6 +42,11 @@ public class Skis extends InventoryItem{
     }
 
     public void setModel(String model) {
+        List<String> models = getSkiModelByBrand("Atomic");
+        if(models.contains(model))
+            this.model = model;
+        else
+            throw new IllegalArgumentException("skii Models should be in the list");
     }
 
     public int getLength() {
